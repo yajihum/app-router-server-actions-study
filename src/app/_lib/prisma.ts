@@ -6,6 +6,9 @@ export function getChatsNumByRoomId(id: number) {
     where: {
       roomId: id,
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
   return count;
 }
