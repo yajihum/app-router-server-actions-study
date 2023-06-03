@@ -1,10 +1,9 @@
-import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
+import { prisma } from "../_lib/prisma";
 import ChatsNum from "./ChatsNum";
 import { JumpIcon } from "./ui/Icon";
 
 export default async function Rooms() {
-  const prisma = new PrismaClient();
   const rooms = await prisma.room.findMany();
   if (!rooms || rooms.length === 0)
     return <div className="my-14">sorry... 参加可能なルームはありません🥹</div>;
