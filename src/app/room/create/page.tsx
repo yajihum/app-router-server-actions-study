@@ -76,8 +76,14 @@ export default function Create() {
           ルームをつくる
         </button>
       </form>
-      <div className="my-6 flex basis-1/2 items-center justify-center md:justify-end ">
-        <Image src="/rorisu.png" width={300} height={300} alt="ロリスの写真" />
+      <div className="my-2 md:my-6 flex basis-1/2 items-center justify-center md:justify-end ">
+        <Image
+          src="/rorisu.png"
+          width={300}
+          height={300}
+          alt="ロリスの写真"
+          className="w-20 h-30 md:w-40 md:h-50"
+        />
       </div>
     </div>
   );

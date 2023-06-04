@@ -41,19 +41,19 @@ export default async function Chats({ chats }: { chats: Chat[] }) {
               {chat.profileImageUrl ? (
                 <Image
                   src={chat.profileImageUrl}
-                  width={50}
-                  height={50}
+                  width={30}
+                  height={30}
                   alt={chat.name ?? ""}
-                  className="h-10 w-10 md:h-16 md:w-16"
+                  className="h-8 w-8 md:w-12 md:h-12"
                 />
               ) : (
                 <div>😃</div>
               )}
-              <p className="text-center text-xs text-gray-500 md:text-sm">
+              <p className="text-center text-xs text-gray-500">
                 {chat.name ?? "ゲスト"}
               </p>
             </div>
-            <p className="mx-1 justify-self-stretch p-4 text-sm md:mx-4 md:text-base">
+            <p className="mx-1 justify-self-stretch p-4 text-xs md:mx-4 md:text-sm">
               {chat.message}
             </p>
           </div>

@@ -57,7 +57,7 @@ export default function Form({
             <p className="text-red-500 text-left my-4">{error}</p>
           </div>
         )}
-        <div className="w-full flex">
+        <div className="w-full flex gap-2">
           <input
             type="text"
             name="message"
@@ -67,7 +67,7 @@ export default function Form({
           />
           <button
             type="submit"
-            className="ml-4 rounded-lg bg-blue-500 hover:bg-blue-400 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring w-1/6"
+            className="rounded-lg bg-blue-500 hover:bg-blue-400 px-2 md:px-4 py-2 text-white text-xs md:text-sm focus:border-blue-300 focus:outline-none focus:ring w-1/6"
           >
             送信
           </button>
