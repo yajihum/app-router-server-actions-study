@@ -9,6 +9,7 @@ export default function Create() {
   const [ispending, setIspending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // 🤨isPendingがtrueの時にローディングUIを出そうとするとredirectしなくなってしまう
   async function handleSubmit(formData: FormData) {
     setIspending(true);
     setError(null);

@@ -36,13 +36,13 @@ export default async function Room({ params }: { params: { id: string } }) {
         <Suspense fallback={<Loading />}>
           {/* @ts-expect-error Async Server Component */}
           <Chats chats={chats} />
+          <Form
+            roomId={parseInt(params.id)}
+            uuid={user.id}
+            username={userName}
+            profileImageUrl={user.profileImageUrl}
+          />
         </Suspense>
-        <Form
-          roomId={parseInt(params.id)}
-          uuid={user.id}
-          username={userName}
-          profileImageUrl={user.profileImageUrl}
-        />
       </div>
     </div>
   );

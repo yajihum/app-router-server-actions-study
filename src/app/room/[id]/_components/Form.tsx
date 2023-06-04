@@ -1,6 +1,7 @@
 "use client";
 
 import { createChatAction, upsertUserAction } from "@/app/_lib/action";
+import Loading from "@/app/loading";
 
 import { useRef, useState } from "react";
 
@@ -40,32 +41,37 @@ export default function Form({
     formRef.current?.reset();
   }
 
+  if (ispending) {
+    return <Loading />;
+  }
+
   return (
     <div className="my-10 bg-white">
       <form
-        className="flex items-center border-t border-gray-200 p-4"
+        className="flex flex-col border-t border-gray-200 p-4"
         action={handleSubmit}
         ref={formRef}
       >
         {error && (
           <div>
-            <p className="text-red-500">{error}</p>
+            <p className="text-red-500 text-left my-4">{error}</p>
           </div>
         )}
-        <input
-          type="text"
-          name="message"
-          autoComplete="off"
-          className="flex-grow rounded-lg border px-4 py-2 focus:border-blue-300 focus:outline-none focus:ring"
-          placeholder="メッセージを入力..."
-        />
-        <button
-          type="submit"
-          disabled={ispending}
-          className="ml-4 rounded-lg bg-blue-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
-        >
-          送信
-        </button>
+        <div className="w-full flex">
+          <input
+            type="text"
+            name="message"
+            autoComplete="off"
+            className="flex-grow rounded-lg border px-4 py-2 focus:border-blue-300 focus:outline-none focus:ring w-5/6"
+            placeholder="メッセージを入力..."
+          />
+          <button
+            type="submit"
+            className="ml-4 rounded-lg bg-blue-500 hover:bg-blue-400 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring w-1/6"
+          >
+            送信
+          </button>
+        </div>
       </form>
     </div>
   );
