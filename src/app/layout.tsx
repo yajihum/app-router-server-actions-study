@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "🍊ChatLife",
-  description: "チャットします",
+  description: "App RouterとServer Actionsを使ったチャットアプリ",
 };
 
 export default function RootLayout({
