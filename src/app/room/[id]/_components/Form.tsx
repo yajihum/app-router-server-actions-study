@@ -1,5 +1,6 @@
 "use client";
 
+import { SubmitButton } from "@/app/_components/ui/SubmitButton";
 import { createChatAction, upsertUserAction } from "@/app/_lib/action";
 import Loading from "@/app/loading";
 
@@ -65,12 +66,7 @@ export default function Form({
             className="flex-grow rounded-lg border px-4 py-2 focus:border-blue-300 focus:outline-none focus:ring w-5/6"
             placeholder="メッセージを入力..."
           />
-          <button
-            type="submit"
-            className="rounded-lg bg-blue-500 hover:bg-blue-400 px-2 md:px-4 py-2 text-white text-xs md:text-sm focus:border-blue-300 focus:outline-none focus:ring w-1/6"
-          >
-            送信
-          </button>
+          <SubmitButton label="送信" pendingLabel="送信中..." />
         </div>
       </form>
     </div>
